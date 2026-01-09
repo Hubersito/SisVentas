@@ -46,7 +46,7 @@
                         <a class="nav-link" href="#">Shops</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sales</a>
+                        <a class="nav-link" href="<?= BASE_URL ?>venta">Sales</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
