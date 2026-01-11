@@ -1,87 +1,167 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login - SisVentas</title>
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sis-Ventas</title>
 
   <style>
     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
 
     body {
-      background: linear-gradient(135deg, #2e7d32, #66bb6a);
-      min-height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #8b078bff, #000);
+      background-color: #2c777cff;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-blend-mode: overlay;
+
     }
 
-    .login-box {
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 2.2rem;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.2);
+    .container {
+      position: relative;
+      width: 750px;
+      height: 450px;
+      border: 2px solid #00aaff;
+      box-shadow: 0 0 25px #00aaff;
+      border-radius: 20px;
+      overflow: hidden;
+      backdrop-filter: blur(6px);
+    }
+
+    .form-box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0 40px;
+      width: 50%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .form-box h2 {
+      font-size: 2rem;
+      text-align: center;
+      color: #00aaff;
+      text-shadow: 0 0 8px #00aaff;
+    }
+
+    .input-box {
+      position: relative;
       width: 100%;
-      max-width: 400px;
+      height: 50px;
+      margin-top: 25px;
+      color: white;
+      font-size: 1.1rem;
     }
 
-    .logo {
-      width: 70px;
-      margin-bottom: 10px;
-    }
-
-    .login-title {
-      font-weight: 600;
-      color: #2e7d32;
-    }
-
-    .login-subtitle {
-      font-size: 14px;
-      color: #6c757d;
-      margin-bottom: 25px;
-    }
-
-    .form-label {
-      font-size: 13px;
-      color: #444;
-      font-weight: 500;
-    }
-
-    .form-control {
-      border-radius: 10px;
-      padding: 10px 12px;
-    }
-
-    .form-control:focus {
-      border-color: #2e7d32;
-      box-shadow: 0 0 0 0.2rem rgba(46, 125, 50, 0.25);
-    }
-
-    .btn-login {
-      background: #2e7d32;
+    .input-box input {
+      width: 100%;
+      height: 100%;
+      background: transparent;
       border: none;
-      border-radius: 10px;
-      padding: 10px;
-      font-weight: 500;
+      outline: none;
+      font-size: 1rem;
+      color: #e6f7ff;
+      border-bottom: 2px solid #00aaff;
+      padding-right: 24px;
+    }
+
+    .input-box label {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      pointer-events: none;
+      transition: .5s;
+      color: #aaa;
+    }
+
+    .input-box input:focus~label,
+    .input-box input:valid~label {
+      top: -5px;
+      color: #00aaff;
+      font-size: 0.9rem;
+    }
+
+    .btn {
+      position: relative;
+      width: 100%;
+      height: 45px;
+      background: linear-gradient(90deg, #00aaff, #0077ff);
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      font-weight: 600;
+      color: white;
+      letter-spacing: 1px;
       transition: 0.3s;
-    }
-
-    .btn-login:hover {
-      background: #1b5e20;
-    }
-
-    .login-footer {
-      font-size: 12px;
-      color: #999;
       margin-top: 20px;
+    }
+
+    .btn:hover {
+      box-shadow: 0 0 15px #00aaff;
+      transform: scale(1.03);
+    }
+
+    .info-content {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: right;
+      padding: 0 40px 60px 100px;
+      color: #e6f7ff;
+      background: linear-gradient(135deg, #002233, #001a26);
+    }
+
+    .info-content h2 {
+      color: #00aaff;
+      text-transform: uppercase;
+      font-size: 2rem;
+      line-height: 1.3;
+      text-shadow: 0 0 10px #00aaff;
+    }
+
+    .info-content p {
+      margin-top: 15px;
+      font-size: 1rem;
+      color: #b8dfff;
+    }
+
+    .info-content img {
+      width: 160px;
+      align-self: flex-end;
+      margin-top: 20px;
+      filter: drop-shadow(0 0 10px #00aaff);
+    }
+
+    .contai {
+      position: absolute;
+      right: 0;
+      top: -5px;
+      height: 600px;
+      width: 850px;
+      background: linear-gradient(450deg, #002233, #00aaff);
+      transform: rotate(10deg) skewY(40deg);
+      transform-origin: bottom right;
+      opacity: 0.2;
     }
   </style>
 
@@ -91,40 +171,41 @@
 </head>
 
 <body>
+  <div class="container">
+    <div class="contai"></div>
+    <div class="form-box Login">
+      <h2>Login</h2>
+      <form id="frm_login">
 
-<div class="login-box text-center">
-  <!-- Logo -->
-  <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png" alt="Logo" class="logo">
+        <div class="input-box">
+          <input type="text" id="username" name="username" required>
+          <label for="">Usuario</label>
+        </div>
 
-  <!-- Título -->
-  <h4 class="login-title">SisVentas</h4>
-  <div class="login-subtitle">Sistema de Gestión de Ventas</div>
+        <div class="input-box">
+          <input type="password" id="password" name="password" required>
+          <label for="">Contraseña</label>
+        </div>
 
-  <!-- Formulario -->
-  <form id="frm_login">
-    <div class="mb-3 text-start">
-      <label for="username" class="form-label">Usuario</label>
-      <input type="text" class="form-control" id="username" name="username" placeholder="Ingrese su usuario" required>
+        <div class="input-box">
+          <button class="btn" type="button" onclick="iniciar_sesion();">Iniciar Sesión</button>
+        </div>
+
+      </form>
     </div>
 
-    <div class="mb-3 text-start">
-      <label for="password" class="form-label">Contraseña</label>
-      <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su contraseña" required>
+    <div class="info-content">
+      <center>
+        <h2>Bienvenido a Sis-Ventas</h2>
+      </center>
+      <p>Tu sistema de gestión para la venta de productos y servicios.</p>
+      <img src="https://static.vecteezy.com/system/resources/previews/006/244/213/non_2x/initial-letter-m-b-logo-design-graphic-alphabet-symbol-for-corporate-business-identity-vector.jpg" alt="Logo HuberStore">
     </div>
-
-    <button type="button" class="btn btn-login w-100" onclick="iniciar_sesion();">
-      Ingresar al Sistema
-    </button>
-  </form>
-
-  <div class="login-footer">
-    © 2025 Sistema de Ventas
   </div>
-</div>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="<?= BASE_URL; ?>view/function/user.js"></script>
-
+  <script src="<?= BASE_URL; ?>view/function/user.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
 </body>
+
 </html>

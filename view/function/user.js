@@ -62,8 +62,13 @@ async function registrarUsuario() {
 async function iniciar_sesion() {
     let usuario = document.getElementById("username").value;
     let password = document.getElementById("password").value;
+
     if (usuario == "" || password == "") {
-        alert("Error, campos vacios!");
+        Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Campos vacios",
+        });
         return;
     }
     try {
@@ -74,19 +79,23 @@ async function iniciar_sesion() {
             cache: 'no-cache',
             body: datos
         });
-        // -------------------------
         let json = await respuesta.json();
-        // validamos que json.status sea = True
-        if (json.status) { //true
+        // validamos que json.status sea = true
+        if (json.status) { // true
             location.replace(base_url + 'new-user');
         } else {
-            alert(json.msg);
+            Swal.fire({
+                icon: "error",                
+                text: json.msg
+            });
         }
-
     } catch (error) {
         console.log(error);
     }
+
 }
+
+
 
 async function view_users() {
     try {
