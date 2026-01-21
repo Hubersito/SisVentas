@@ -125,8 +125,8 @@ async function view_users() {
                             <td>${usuario.rol}</td>
                             <td>${estado}</td>
                             <td>
-                                <a href="`+ base_url + `edit-user/` + usuario.id + `">Editar</a>
-                                <button class="btn btn-danger" onclick="fn_eliminar(` + usuario.id + `);">Eliminar</button>
+                                <a href="`+ base_url + `edit-user/` + usuario.id + `" class="btn btn-primary">Editar</a>
+                                <button onclick="eliminar(` + usuario.id + `)" class="btn btn-danger">Eliminar</button>
                             </td>
                 `;
                 cont++;
