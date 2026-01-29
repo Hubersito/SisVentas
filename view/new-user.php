@@ -133,8 +133,8 @@
 </div>
 
 <script src="<?php echo BASE_URL; ?>view/function/clients.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="<?php echo BASE_URL; ?>view/function/consulta.js"></script>
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
