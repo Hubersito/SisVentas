@@ -3,6 +3,10 @@
         <div class="card shadow-lg border-0 w-75">
         <div class="card-header bg-primary text-white text-center fs-4 fw-bold">
             <i class="bi bi-person-gear text-warning me-2"></i> Editar Usuario
+
+            <a href="<?= BASE_URL ?>users" class="btn btn-light btn-sm position-absolute end-0 me-3">
+        Atrás
+      </a>
         </div>
 
         <form id="frm_edit_user" action="" method="">
