@@ -115,8 +115,8 @@
                     <div class="col-sm-9">
                         <select class="form-select" aria-label="Default select example" id="rol" name="rol" required
                             readonly>
-                            <option value="administrador" selected>Administrador</option>
-                            <option value="usuario" selected>Usuario</option>
+                            <option value="Administrador" selected>Administrador</option>
+                            <option value="Usuario" selected>Usuario</option>
                         </select>
                     </div>
                 </div>

@@ -97,8 +97,8 @@
                     <div class="col-sm-9">
                         <select class="form-select" id="rol" name="rol" required>
                             <option value="" disabled selected>Seleccione</option>
-                            <option value="admin">Administrador</option>
-                            <option value="proveedor">Proveedor</option>
+                            <option value="Administrador">Administrador</option>
+                            <option value="Usuario">Usuario</option>
                         </select>
                     </div>
                 </div>
